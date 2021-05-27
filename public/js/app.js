@@ -1,5 +1,3 @@
-console.log('Client side JS file is loaded!');
-
 const weatherInput = document.querySelector('form');
 
 weatherInput.addEventListener('submit', e => {
