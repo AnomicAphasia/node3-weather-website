@@ -12,17 +12,21 @@ const forecast = (lat, lng, callback) => {
       callback('Invalid Coordinates.');
     } else {
       const {
-        temperature: currently,
+        temperature,
         feelslike,
         precip,
         weather_descriptions: description,
+        humidity,
+        cloudcover,
+        uv_index,
+        visibility,
       } = body.current;
-      callback(undefined, {
-        currently,
-        feelslike,
-        precip,
-        description: description[0].toLowerCase(),
-      });
+      callback(
+        undefined,
+        `Current temperature: ${temperature} degrees. It feels like ${feelslike} degrees. Amount of precipitation today is ${precip}. it is ${description[0].toLowerCase()} out. The humidity is ${humidity}. UV index is ${
+          uv_index > 5 ? 'high' : 'low'
+        }.`
+      );
     }
   });
 };

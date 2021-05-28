@@ -16,9 +16,8 @@ weatherInput.addEventListener('submit', e => {
         messageOne.textContent = data.error;
         messageTwo.innerHTML = '';
       } else {
-        const temps = data.data;
         messageOne.textContent = `Location: ${data.location}`;
-        messageTwo.innerHTML = `<div>Currently: ${temps.currently}</div><div>Feels Like: ${temps.feelslike}</div><div>Precipitation: ${temps.precip}</div><div>${temps.description}</div>`;
+        messageTwo.innerHTML = data.data;
       }
     });
   });
